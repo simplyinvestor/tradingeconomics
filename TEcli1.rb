@@ -4,7 +4,7 @@ require 'tty-command'
 require 'httparty'
 require 'colorize'
 
-heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+$ heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
 
 prompt = TTY::Prompt.new
 font = TTY::Font.new(:starwars)
