@@ -4,7 +4,27 @@ require 'tty-command'
 require 'httparty'
 require 'colorize'
 
-$heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+$ ls
+Gemfile Gemfile.lock
+
+$ heroku create --buildpack heroku/ruby
+
+$ git push heroku main
+...
+-----> Heroku receiving push
+-----> Fetching custom buildpack
+-----> Ruby app detected
+-----> Installing dependencies using Bundler version 1.1.rc
+       Running: bundle install --without development:test --path vendor/bundle --deployment
+       Fetching gem metadata from http://rubygems.org/..
+       Installing rack (1.3.5)
+       Using bundler (1.1.rc)
+       Your bundle is complete! It was installed into ./vendor/bundle
+       Cleaning up the bundler cache.
+-----> Discovering process types
+       Procfile declares types -> (none)
+       Default types for Ruby  -> console, rake
+
 
 prompt = TTY::Prompt.new
 font = TTY::Font.new(:starwars)
